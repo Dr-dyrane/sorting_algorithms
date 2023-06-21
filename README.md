@@ -32,14 +32,19 @@ Each sorting algorithm is implemented in a separate C file within the repository
 
 Here is the list of files available in this repository:
 
-- [bubble_sort.c](./bubble_sort.c): Implementation of the Bubble Sort algorithm.
-- [insertion_sort.c](./insertion_sort.c): Implementation of the Insertion Sort algorithm.
-- [selection_sort.c](./selection_sort.c): Implementation of the Selection Sort algorithm.
-- [quick_sort.c](./quick_sort.c): Implementation of the Quick Sort algorithm.
-- [cocktail_shaker_sort.c](./cocktail_shaker_sort.c): Implementation of the Cocktail Shaker Sort algorithm.
-- [counting_sort.c](./counting_sort.c): Implementation of the Counting Sort algorithm.
-- [merge_sort.c](./merge_sort.c): Implementation of the Merge Sort algorithm.
-- [heap_sort.c](./heap_sort.c): Implementation of the Heap Sort algorithm.
+- [bubble_sort.c](./0-bubble_sort.c): Implementation of the Bubble Sort algorithm.
+- [insertion_sort.c](./1-insertion_sort.c): Implementation of the Insertion Sort algorithm.
+- [selection_sort.c](./2-selection_sort.c): Implementation of the Selection Sort algorithm.
+- [shell sort - Knuth Sequence](./100-shell_sort.c): Implementation of the Shell Sort algorithm.
+- [quick_sort.c](./3-quick_sort.c): Implementation of the Quick Sort algorithm.
+- [cocktail_shaker_sort.c](./101-cocktail_sort_list.c): Implementation of the Cocktail Shaker Sort algorithm.
+- [counting_sort.c](./102-counting_sort.c): Implementation of the Counting Sort algorithm.
+- [merge_sort.c](./103-merge_sort.c): Implementation of the Merge Sort algorithm.
+- [heap_sort.c](./104-heap_sort.c): Implementation of the Heap Sort algorithm.
+- [radix sort](./105-radix_sort.c) Implementation of the Radix Sort algorithm.
+- [bitonic sort](./106-bitonic_sort.c): Implementation of the Bitcoin Sort algorithm.
+- [quick Sort - Hoare Partition scheme](./107-quick_sort_hoare.c): Implementation of the Quick Sort algorithm - Hoare Partition scheme.
+- [dealer](./1000-sort_deck.c) Implementation of a function that sorts a deck of cards.
 
 ## Usage
 
