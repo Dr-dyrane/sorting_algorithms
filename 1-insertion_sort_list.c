@@ -64,7 +64,6 @@ void insertion_sort_list(listint_t **list)
 	while (current)
 	{
 		temp = current;
-		current = current->next;
 
 		/* Traverse backwards until temp is in the correct position */
 		while (temp->prev && temp->n < temp->prev->n)
@@ -74,4 +73,5 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 		}
 	}
+	current = current->next;
 }
