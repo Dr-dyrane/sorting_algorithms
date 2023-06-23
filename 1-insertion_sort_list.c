@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
 	while (current)
 	{
 		/* Traverse backwards until temp is in the correct position */
-        while ((current->prev) && (current->prev->n > current->n))
+		while ((current->prev) && (current->prev->n > current->n))
 		{
 			current = swap_node(current, list);
 			print_list(*list);
