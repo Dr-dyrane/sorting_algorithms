@@ -3,7 +3,7 @@
 
 /**
  *cocktail_sort_list - Sorts a doubly linked list of integers
- *                    in ascending order using Cocktail Shaker sort algorithm
+ *                   in ascending order using Cocktail Shaker sort algorithm
  *
  *@list: Pointer to the pointer to the head of the list
  */
@@ -36,7 +36,6 @@ void cocktail_sort_list(listint_t **list)
 			break;
 
 		swapped = 0;
-
 		/*Traverse backward */
 		while (current->prev != NULL)
 		{
@@ -60,7 +59,7 @@ void cocktail_sort_list(listint_t **list)
  *
  *Return: Pointer to the new position of the swapped node
  */
-listint_t* swap_node(listint_t *node, listint_t **list)
+listint_t *swap_node(listint_t *node, listint_t **list)
 {
 	listint_t *prev_node = node->prev, *current = node;
 
@@ -74,7 +73,8 @@ listint_t* swap_node(listint_t *node, listint_t **list)
 
 	if (current->prev)
 		current->prev->next = current;
-	else *list = current;
+	else
+		*list = current;
 
 	return (current);
 }
