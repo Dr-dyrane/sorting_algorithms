@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 /**
- * swap_nodes - Swaps a node with its previous one in a doubly linked list
+ * swap_node - Swaps a node with its previous one in a doubly linked list
  *
  * @node: Node to be swapped
  * @list: Double pointer to the head of the list
