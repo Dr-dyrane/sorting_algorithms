@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "sort.h"
 
 /**
@@ -21,9 +22,9 @@ void swap(int *array, ssize_t item1, ssize_t item2)
  * @start: Starting index of the partition.
  * @end: Ending index of the partition.
  * @size: Size of the array.
-
+ *
  * Return: The index of the pivot after partitioning.
-
+ *
  * Description: This function selects the pivot and partitions the array
  *              into two sub-arrays using the Hoare partition scheme.
  *              It returns the index of the pivot after partitioning.
@@ -54,12 +55,12 @@ int hoare_partition(int *array, int start, int end, int size)
 }
 
 /**
- *quick_sort_recursive - Recursive function to perform quicksort.
- *@array: Pointer to the array to be sorted.
- *@start: Starting index of the array/sub-array.
- *@end: Ending index of the array/sub-array.
- *@size: Size of the array.
-
+ * quick_sort_recursive - Recursive function to perform quicksort.
+ * @array: Pointer to the array to be sorted.
+ * @start: Starting index of the array/sub-array.
+ * @end: Ending index of the array/sub-array.
+ * @size: Size of the array.
+ *
  * Description: This function recursively performs the quicksort algorithm
  *              using the Hoare partition scheme. It selects a pivot,
  *              partitions the array, and recursively sorts the sub-arrays.
