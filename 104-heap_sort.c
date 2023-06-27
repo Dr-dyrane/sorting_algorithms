@@ -1,72 +1,89 @@
 #include "sort.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * sift_down - Repair the heap by sifting down an element at given index.
- * @array: The array to be sorted.
- * @start: The index of the element to sift down.
- * @end: The index of the last element in the heap.
+ * swap - Swaps two elements in an array.
  *
- * Return: None.
+ * @a: Pointer to the first element
+ * @b: Pointer to the second element
  */
-void sift_down(int *array, size_t start, size_t end)
+void swap(int *a, int *b)
 {
-	size_t root = start;
+	int t = *a;
 
-	while (2 * root + 1 <= end)
+	*a = *b;
+	*b = temp;
+}
+
+/**
+ * heapify - Adjusts the heap to satisfy the heap property.
+ *
+ * @array: The input array
+ * @size: The size of the array
+ * @root: The root index of the subtree to heapify
+ * @total_size: The total size of the original array
+ */
+void heapify(int *array, size_t size, int root, size_t total_size)
+{
+	int largest = root;		 /* Initialize largest as root*/
+	int left = 2 * root + 1;	 /* left = (root << 1) + 1*/
+	int right = 2 * root + 2; /* right = (root + 1) << 1*/
+
+	/* See if left child of root exists and is greater than root*/
+	if (left < (int)n && array[left] > array[largest])
+		largest = left;
+
+	/**
+	 * See if right child of root exists and is greater than
+     *the largest so far
+	 */
+	if (right < (int)n && array[right] > array[largest])
+		largest = right;
+
+	/* Change root, if needed*/
+	if (largest != root)
 	{
-		size_t child = 2 * root + 1; /* Left child */
-		size_t swap = root;
-
-		if (child < end && array[child] < array[child + 1])
-			child++; /* Choose the largest child */
-
-		if (array[root] < array[child])
-		{
-			swap = child;
-			/* Swap root and the largest child */
-			int temp = array[root];
-
-			array[root] = array[swap];
-			array[swap] = temp;
-			print_array(array, end + 1);
-			root = swap;
-		}
-		else
-		{
-			return;
-		}
+		swap(&array[root], &array[largest]);
+		print_array(array, size);
+		heapify(array, size, largest, total_size);
 	}
 }
 
 /**
- * heap_sort - Sorts an array of integers in ascending order using Heap sort.
- * @array: The array to be sorted.
- * @size: The size of the array.
+ * heap_sort - Sorts an array of integers in ascending order using
+ *             the Heap sort algorithm.
  *
- * Return: None.
+ * @array: The array to be sorted
+ * @size: The size of the array
  */
 void heap_sort(int *array, size_t size)
 {
 	int i;
-
-	if (array == NULL || size < 2)
+	/**
+	 * Start from bottommost and rightmost internal mode and heapify all
+     * internal modes in bottom up way
+	 */
+	if (array == '\0' || size < 2)
 		return;
 
-	/* Build max heap */
-	for (i = size / 2 - 1; i >= 0; i--)
-		sift_down(array, i, size - 1);
+	for (i = (size - 2) / 2; i >= 0; --i)
+		heapify(array, size, i, size);
 
-	/* Heap sort */
-	for (i = size - 1; i > 0; i--)
+	/**
+	* Repeat following steps while heap size is greater than 1.
+    * The last element in max heap will be the minimum element
+	*/
+	for (i = (size - 1); i > 0; --i)
 	{
-		/* Swap root (maximum element) with the last element */
-		int temp = array[0];
-
-		array[0] = array[i];
-		array[i] = temp;
+		/**
+		* The largest item in Heap is stored at the root. Replace
+		*it with the last item of the heap followed by reducing the
+		*size of heap by 1.
+		*/
+		swap(&array[0], &array[i]);
 		print_array(array, size);
-		sift_down(array, 0, i - 1);
+
+		/* Finally, heapify the root of tree.*/
+		heapify(array, size, 0, i);
 	}
 }
