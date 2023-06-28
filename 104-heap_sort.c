@@ -9,7 +9,7 @@
  */
 void swap(int *a, int *b)
 {
-	int t = *a;
+	int temp = *a;
 
 	*a = *b;
 	*b = temp;
@@ -30,7 +30,7 @@ void heapify(int *array, size_t size, int root, size_t total_size)
 	int right = 2 * root + 2; /* right = (root + 1) << 1*/
 
 	/* See if left child of root exists and is greater than root*/
-	if (left < (int)n && array[left] > array[largest])
+	if (left < (int)total_size && array[left] > array[largest])
 		largest = left;
 
 	/**
@@ -63,7 +63,7 @@ void heap_sort(int *array, size_t size)
 	 * Start from bottommost and rightmost internal mode and heapify all
      * internal modes in bottom up way
 	 */
-	if (array == '\0' || size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	for (i = (size - 2) / 2; i >= 0; --i)
