@@ -90,7 +90,7 @@ void merge(int *array, int *left, size_t l_size, int *right, size_t r_size)
  */
 void merge_sort(int *array, size_t size)
 {
-	size_t mid, i;
+	size_t mid;
 	int *left, *right;
 
 	if (array == NULL || size < 2)
