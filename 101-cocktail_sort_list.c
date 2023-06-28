@@ -7,6 +7,8 @@
  *
  * @list: Double pointer to the head of the linked list
  * @node: Node to be swapped
+ *
+ * Return: The pointer to the swapped node
  */
 listint_t *swap_node(listint_t *node, listint_t **list)
 {
@@ -37,7 +39,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *current;
 	int swapped = 1;
 
-	if (list == '\0' || (*list) == '\0' || (*list)->next == '\0')
+	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
 		return;
 	current = *list;
 	while (swapped == 1)
