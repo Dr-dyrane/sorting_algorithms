@@ -25,14 +25,14 @@ int get_max(int *array, int size)
 }
 
 /**
- * counting_sort - Performs counting sort on an array of integers based on the
- *                specified digit represented by 'exp'.
+ * radix_counting_sort - Performs counting sort on an array of integers
+ *                based on the specified digit represented by 'exp'.
  * @array: The array to be sorted.
  * @size: The size of the array.
  * @exp: The exponent indicating the digit to consider.
  * @output: Array to save the temporary values.
  */
-void counting_sort(int *array, size_t size, int exp, int *output)
+void radix_counting_sort(int *array, size_t size, int exp, int *output)
 {
 	int count[10] = { 0 };
 
@@ -84,7 +84,7 @@ void radix_sort(int *array, size_t size)
 
 	for (exp = 1; maximum / exp > 0; exp *= 10)
 	{
-		counting_sort(array, size, exp, output);
+		radix_counting_sort(array, size, exp, output);
 		print_array(array, size);
 	}
 
