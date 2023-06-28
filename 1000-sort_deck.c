@@ -1,6 +1,7 @@
 #include "deck.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * card_cmp - Comparator function for card_t structures
